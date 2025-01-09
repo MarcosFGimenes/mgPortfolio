@@ -29,7 +29,7 @@
                 <div>
                     <h1 class="text-4xl font-extrabold text-green-400 mb-6">Marcos Farinelli Gimenes</h1>
                     <p class="leading-relaxed mb-6">
-                        Sou um <strong class="text-green-300">desenvolvedor full stack</strong> com vasta experiência na criação de <strong class="text-green-300">soluções digitais completas</strong>, desde o <em>front-end</em> até o <em>back-end</em>. Minha especialidade é desenvolver <strong class="text-green-300">aplicativos multiplataforma</strong> utilizando Flutter e arquitetar sistemas escaláveis e eficientes com Node.js.
+                        Sou um <strong class="text-green-300">desenvolvedor full stack</strong> com experiência na criação de <strong class="text-green-300">soluções digitais completas</strong>, desde o <em>front-end</em> até o <em>back-end</em>. Minha especialidade é desenvolver <strong class="text-green-300">aplicativos multiplataforma</strong> utilizando Flutter e arquitetar sistemas escaláveis e eficientes com Node.js.
                     </p>
                     <ul class="list-disc pl-6 space-y-2 mb-6">
                         <li><strong class="text-green-300">Aplicativos modernos</strong> para Android e iOS (Flutter/Dart).</li>
@@ -43,26 +43,29 @@
                 </div>
             </div>
         </section>
-        
-        
 
         <!-- Projetos -->
         <section id="projects" class="mb-20">
             <h2 class="text-3xl font-bold text-green-400 mb-8 text-center">Projetos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- Projeto 1 -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                    <h3 class="text-2xl text-green-300 font-semibold mb-4">
+            <!-- Ajuste do container centralizado -->
+            <div class="flex justify-center">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full md:w-3/4 lg:w-2/3">
+                    <h3 class="text-2xl text-green-300 font-semibold mb-4 text-center">
                         <a href="https://github.com/MarcosFGimenes/security-key" target="_blank" class="hover:text-green-400">Security Key</a>
                     </h3>
-                    <p class="leading-relaxed mb-4">
+                    <p class="leading-relaxed mb-4 text-center">
                         Um projeto que demonstra funcionalidades como:
                         <ul class="list-disc pl-6">
                             <li>Login seguro com Firebase Auth.</li>
                             <li>Armazenamento de dados no Cloud Firestore.</li>
                         </ul>
                     </p>
-                    <img src="assets/securitykey.png" alt="Security Key" class="rounded-lg shadow-lg max-w-full transition-transform duration-250 hover:scale-105">
+                    <!-- Galeria de imagens -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <img src="assets/securitykey2.png" alt="Security Key 2" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-105 object-cover">
+                        <img src="assets/securitykey3.png" alt="Security Key 3" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-105 object-cover">
+                        <img src="assets/securitykey4.png" alt="Security Key 4" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-105 object-cover">
+                    </div>
                 </div>
             </div>
         </section>
@@ -115,6 +118,5 @@
         <p class="text-gray-400">&copy; 2025 Marcos Farinelli Gimenes. Todos os direitos reservados.</p>
     </footer>
     <script src="script.js"></script>
-
 </body>
 </html>
