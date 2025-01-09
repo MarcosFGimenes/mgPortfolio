@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Gimenes</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-200">
+    <!-- Header -->
+    <header class="bg-gray-700 py-5 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-center space-x-10 text-lg">
+            <a href="#about" class="text-green-400 hover:text-green-300 transition-all duration-200">Sobre Mim</a>
+            <a href="#projects" class="text-green-400 hover:text-green-300 transition-all duration-200">Projetos</a>
+            <a href="#contact" class="text-green-400 hover:text-green-300 transition-all duration-200">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="container mx-auto py-16 px-6">
+        <!-- Sobre Mim -->
+        <section id="about" class="mb-20">
+            <div class="flex flex-col md:flex-row items-center md:items-start bg-gray-800 p-8 rounded-lg shadow-lg">
+                <!-- Foto de Perfil -->
+                <div class="w-128 h-128 rounded-full overflow-hidden border-4 border-green-400 shadow-lg mb-6 md:mb-0 md:mr-8">
+                    <img src="assets/foto_topzera.jpg" alt="Marcos Gimenes" class="w-full h-full object-cover">
+                </div>
+                <!-- Texto Sobre Mim -->
+                <div>
+                    <h1 class="text-4xl font-extrabold text-green-400 mb-6">Marcos Farinelli Gimenes</h1>
+                    <p class="leading-relaxed mb-6">
+                        Sou um <strong class="text-green-300">desenvolvedor full stack</strong> com vasta experiência na criação de <strong class="text-green-300">soluções digitais completas</strong>, desde o <em>front-end</em> até o <em>back-end</em>. Minha especialidade é desenvolver <strong class="text-green-300">aplicativos multiplataforma</strong> utilizando Flutter e arquitetar sistemas escaláveis e eficientes com Node.js.
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2 mb-6">
+                        <li><strong class="text-green-300">Aplicativos modernos</strong> para Android e iOS (Flutter/Dart).</li>
+                        <li>Integração de APIs RESTful com <strong class="text-green-300">Node.js</strong>.</li>
+                        <li>Interfaces responsivas com <strong class="text-green-300">HTML, CSS e JavaScript</strong>.</li>
+                        <li>Gestão de bancos de dados como <strong class="text-green-300">MySQL e Firebase</strong>.</li>
+                    </ul>
+                    <p class="leading-relaxed">
+                        <strong class="text-green-400">🚀 Minha missão:</strong> Fornecer soluções tecnológicas inovadoras com foco em <strong class="text-green-300">usabilidade</strong>, <strong class="text-green-300">eficiência</strong> e <strong class="text-green-300">resultados concretos</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        
+
+        <!-- Projetos -->
+        <section id="projects" class="mb-20">
+            <h2 class="text-3xl font-bold text-green-400 mb-8 text-center">Projetos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Projeto 1 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <h3 class="text-2xl text-green-300 font-semibold mb-4">
+                        <a href="https://github.com/MarcosFGimenes/security-key" target="_blank" class="hover:text-green-400">Security Key</a>
+                    </h3>
+                    <p class="leading-relaxed mb-4">
+                        Um projeto que demonstra funcionalidades como:
+                        <ul class="list-disc pl-6">
+                            <li>Login seguro com Firebase Auth.</li>
+                            <li>Armazenamento de dados no Cloud Firestore.</li>
+                        </ul>
+                    </p>
+                    <img src="projeto1-1.png" alt="Screenshot do Projeto Security Key" class="rounded-lg shadow-lg max-w-full transition-transform duration-300 hover:scale-105">
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificações -->
+        <section id="certifications" class="mb-20">
+            <h2 class="text-3xl font-bold text-green-400 mb-8 text-center">Certificações</h2>
+            <div class="space-y-8">
+                <!-- Certificação 1 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-2xl text-green-300 font-semibold mb-2">TOFAS - JavaScript Nível 1</h3>
+                    <p class="leading-relaxed mb-4">
+                        Certificação emitida pelo <strong class="text-green-400">TOFAS</strong>, através do "International Test of Fundamental Academic Skills."
+                    </p>
+                    <a href="assets/MARCOS_FARINELLI_GIMENES.pdf" target="_blank" download class="text-green-300 underline hover:text-green-400 transition-all duration-300">📄 Baixar Certificado</a>
+                </div>
+                <!-- Certificação 2 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-2xl text-green-300 font-semibold mb-2">Beyond - Desenvolvedor Flutter</h3>
+                    <p class="leading-relaxed mb-4">
+                        Certificação emitida pela <strong class="text-green-400">Beyond Systems</strong>, após conquistar a primeira colocação em um concurso de desenvolvimento mobile com Flutter integrado ao Firebase.
+                    </p>
+                    <a href="assets/CERTIFICADO 1º DEV FLUTTER - MARCOS GIMENES.pdf" target="_blank" download class="text-green-300 underline hover:text-green-400 transition-all duration-300">📄 Baixar Certificado</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contact">
+            <h2 class="text-3xl font-bold text-green-400 mb-4 text-center">Contato</h2>
+            <div class="space-y-4 text-center">
+                <p class="flex justify-center items-center space-x-3">
+                    <span>📧</span>
+                    <a href="mailto:marcosgimenesdev@gmail.com" class="text-green-300 underline hover:text-green-400 transition-all duration-300">marcosgimenesdev@gmail.com</a>
+                </p>
+                <p class="flex justify-center items-center space-x-3">
+                    <span>🔗</span>
+                    <a href="https://www.linkedin.com/in/marcos-gimenes-73291627a/" target="_blank" class="text-green-300 underline hover:text-green-400 transition-all duration-300">LinkedIn</a>
+                </p>
+                <p class="flex justify-center items-center space-x-3">
+                    <span>📱</span>
+                    <a href="https://wa.me/5545998394505" target="_blank" class="text-green-300 underline hover:text-green-400 transition-all duration-300">(45) 99839-4505</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 text-center">
+        <p class="text-gray-400">&copy; 2025 Marcos Farinelli Gimenes. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>
