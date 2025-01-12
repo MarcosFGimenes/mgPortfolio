@@ -5,6 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcos Gimenes</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Estilo para o carrossel */
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel img {
+            display: none;
+            width: 100%;
+            height: auto;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel img.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-controls button {
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .carousel-controls button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
 </head>
 <body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-200">
     <!-- Header -->
@@ -12,6 +57,7 @@
         <nav class="container mx-auto flex justify-center space-x-10 text-lg">
             <a href="#about" class="text-green-400 hover:text-green-300 transition-all duration-200">Sobre Mim</a>
             <a href="#projects" class="text-green-400 hover:text-green-300 transition-all duration-200">Projetos</a>
+            <a href="#certifications" class="text-green-400 hover:text-green-300 transition-all duration-200">Certificações</a>
             <a href="#contact" class="text-green-400 hover:text-green-300 transition-all duration-200">Contato</a>
         </nav>
     </header>
@@ -21,11 +67,9 @@
         <!-- Sobre Mim -->
         <section id="about" class="mb-20">
             <div class="flex flex-col md:flex-row items-center md:items-start bg-gray-800 p-8 rounded-lg shadow-lg">
-                <!-- Foto de Perfil -->
                 <div class="w-128 h-128 rounded-full overflow-hidden border-4 border-green-400 shadow-lg mb-6 md:mb-0 md:mr-8">
                     <img src="assets/foto_topzera.jpg" alt="Marcos Gimenes" class="w-full h-full object-cover">
                 </div>
-                <!-- Texto Sobre Mim -->
                 <div>
                     <h1 class="text-4xl font-extrabold text-green-400 mb-6">Marcos Farinelli Gimenes</h1>
                     <p class="leading-relaxed mb-6">
@@ -47,9 +91,9 @@
         <!-- Projetos -->
         <section id="projects" class="mb-20">
             <h2 class="text-3xl font-bold text-green-400 mb-8 text-center">Projetos</h2>
-            <!-- Ajuste do container centralizado -->
-            <div class="flex justify-center">
-                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full md:w-3/4 lg:w-2/3">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Projeto Security Key -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
                     <h3 class="text-2xl text-green-300 font-semibold mb-4 text-center">
                         <a href="https://github.com/MarcosFGimenes/security-key" target="_blank" class="hover:text-green-400">Security Key</a>
                     </h3>
@@ -61,10 +105,36 @@
                         </ul>
                     </p>
                     <!-- Galeria de imagens -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <img src="assets/securitykey2.png" alt="Security Key 2" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-105 object-cover">
-                        <img src="assets/securitykey3.png" alt="Security Key 3" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-105 object-cover">
-                        <img src="assets/securitykey4.png" alt="Security Key 4" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-105 object-cover">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <img src="assets/securitykey2.png" alt="Security Key 2" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-110 object-cover">
+                        <img src="assets/securitykey3.png" alt="Security Key 3" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-110 object-cover">
+                        <img src="assets/securitykey4.png" alt="Security Key 4" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-110 object-cover">
+                    </div>
+                </div>
+
+                <!-- Projeto Agendamento -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+                    <h3 class="text-2xl text-green-300 font-semibold mb-4 text-center">
+                        <a href="https://camylash.vercel.app/" target="_blank" class="hover:text-green-400">Sistema de Agendamento de Horários</a>
+                    </h3>
+                    <p class="leading-relaxed mb-4 text-center">
+                        Sistema de agendamento de horários online, desenvolvido com React, Node.js e MongoDB:
+                        <ul class="list-disc pl-6">
+                            <li>Gerenciamento de agendamentos.</li>
+                            <li>Administração de horários padrão.</li>
+                            <li>Integração com banco de dados MongoDB.</li>
+                        </ul>
+                    </p>
+                    <!-- Carrossel -->
+                    <div class="carousel mt-6" id="carousel-agendamento">
+                        <img src="assets/agendamento1.png" alt="Agendamento 1" class="rounded-lg active">
+                        <img src="assets/agendamento2.png" alt="Agendamento 2" class="rounded-lg">
+                        <img src="assets/agendamento3.png" alt="Agendamento 3" class="rounded-lg">
+                        <!-- Controles do carrossel -->
+                        <div class="carousel-controls">
+                            <button onclick="prevSlide('carousel-agendamento')">❮</button>
+                            <button onclick="nextSlide('carousel-agendamento')">❯</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,7 +144,6 @@
         <section id="certifications" class="mb-20">
             <h2 class="text-3xl font-bold text-green-400 mb-8 text-center">Certificações</h2>
             <div class="space-y-8">
-                <!-- Certificação 1 -->
                 <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
                     <h3 class="text-2xl text-green-300 font-semibold mb-2">TOFAS - JavaScript Nível 1</h3>
                     <p class="leading-relaxed mb-4">
@@ -82,7 +151,6 @@
                     </p>
                     <a href="assets/MARCOS_FARINELLI_GIMENES.pdf" target="_blank" download class="text-green-300 underline hover:text-green-400 transition-all duration-300">📄 Baixar Certificado</a>
                 </div>
-                <!-- Certificação 2 -->
                 <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
                     <h3 class="text-2xl text-green-300 font-semibold mb-2">Beyond - Desenvolvedor Flutter</h3>
                     <p class="leading-relaxed mb-4">
@@ -92,31 +160,36 @@
                 </div>
             </div>
         </section>
-
-        <!-- Contato -->
-        <section id="contact">
-            <h2 class="text-3xl font-bold text-green-400 mb-4 text-center">Contato</h2>
-            <div class="space-y-4 text-center">
-                <p class="flex justify-center items-center space-x-3">
-                    <span>📧</span>
-                    <a href="mailto:marcosgimenesdev@gmail.com" class="text-green-300 underline hover:text-green-400 transition-all duration-300">marcosgimenesdev@gmail.com</a>
-                </p>
-                <p class="flex justify-center items-center space-x-3">
-                    <span>🔗</span>
-                    <a href="https://www.linkedin.com/in/marcos-gimenes-73291627a/" target="_blank" class="text-green-300 underline hover:text-green-400 transition-all duration-300">LinkedIn</a>
-                </p>
-                <p class="flex justify-center items-center space-x-3">
-                    <span>📱</span>
-                    <a href="https://wa.me/5545998394505" target="_blank" class="text-green-300 underline hover:text-green-400 transition-all duration-300">(45) 99839-4505</a>
-                </p>
-            </div>
-        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 py-6 text-center">
-        <p class="text-gray-400">&copy; 2025 Marcos Farinelli Gimenes. Todos os direitos reservados.</p>
-    </footer>
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script>
+        function showSlide(carouselId, index) {
+            const carousel = document.getElementById(carouselId);
+            const slides = carousel.querySelectorAll('img');
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const slides = carousel.querySelectorAll('img');
+            const activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            const nextIndex = (activeIndex + 1) % slides.length;
+            showSlide(carouselId, nextIndex);
+        }
+
+        function prevSlide(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const slides = carousel.querySelectorAll('img');
+            const activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+            const prevIndex = (activeIndex - 1 + slides.length) % slides.length;
+            showSlide(carouselId, prevIndex);
+        }
+    </script>
 </body>
 </html>
