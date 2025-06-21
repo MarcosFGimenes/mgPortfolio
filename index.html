@@ -1,221 +1,413 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-br" class="bg-gradient-to-br from-black via-gray-900 to-black min-h-screen flex flex-col">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcos Gimenes</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Estilo para o carrossel */
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: auto;
-        }
-
-        .carousel img {
-            display: none;
-            width: 100%;
-            height: auto;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .carousel img.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .carousel-controls button {
-            background: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 1.5rem;
-            border-radius: 50%;
-            transition: background 0.3s;
-        }
-
-        .carousel-controls button:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-    </style>
-<style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcos Gimenes - Desenvolvedor Fullstack</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .tech-icon {
+      transition: all 0.3s ease;
+    }
+    .tech-icon:hover {
+      transform: translateY(-5px);
+      filter: drop-shadow(0 5px 5px rgba(74, 222, 128, 0.3));
+    }
+    .footer {
+      margin-top: auto;
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-200">
-    <!-- Header -->
-    <header class="bg-gray-700 py-5 shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto flex justify-center space-x-10 text-lg">
-            <a href="#about" class="text-green-400 hover:text-green-300 transition-all duration-200">Sobre Mim</a>
-            <a href="#projects" class="text-green-400 hover:text-green-300 transition-all duration-200">Projetos</a>
-            <a href="#certifications" class="text-green-400 hover:text-green-300 transition-all duration-200">Certificações</a>
-        </nav>
-    </header>
+<body class="text-gray-200 font-sans flex flex-col min-h-screen">
 
-<!-- Main -->
-<main class="container mx-auto py-16 px-6">
-    <!-- Sobre Mim -->
-    <section id="about" class="mb-20">
-        <div class="flex flex-col md:flex-row items-center md:items-start bg-gray-800 p-8 rounded-lg shadow-lg">
-            <div class="w-128 h-128 rounded-full overflow-hidden border-4 border-green-400 shadow-lg mb-6 md:mb-0 md:mr-8">
-                <img src="assets/foto_topzera.jpg" alt="Marcos Gimenes" class="w-full h-full object-cover">
-            </div>
-            <div>
-                <h1 class="text-4xl font-extrabold text-green-400 mb-6">Marcos Farinelli Gimenes</h1>
-                <p class="leading-relaxed mb-6">
-                    Sou um <strong class="text-green-300">desenvolvedor backend em formação</strong>, comprometido em evoluir constantemente e construir sistemas eficientes e escaláveis. Atualmente, estudo <strong class="text-green-300">Análise e Desenvolvimento de Sistemas no IFPR</strong> e aprimoro minhas habilidades em <strong class="text-green-300">Java</strong> e outras tecnologias voltadas ao backend.
-                </p>
-                <ul class="list-disc pl-6 space-y-2 mb-6">
-                    <li>Desenvolvimento de APIs robustas e escaláveis com <strong class="text-green-300">Java</strong> e <strong class="text-green-300">Node.js</strong>.</li>
-                    <li>Modelagem e gestão de bancos de dados com <strong class="text-green-300">MySQL</strong>, <strong class="text-green-300">MongoDB</strong> e <strong class="text-green-300">Firebase</strong>.</li>
-                    <li>Arquitetura de sistemas e boas práticas de desenvolvimento backend.</li>
-                    <li>Integração de <strong class="text-green-300">APIs RESTful</strong> para comunicação entre serviços.</li>
-                </ul>
-                <p class="leading-relaxed">
-                    <strong class="text-green-400">🚀 Minha missão:</strong> Aprender e aplicar as melhores práticas para desenvolver soluções backend confiáveis, performáticas e seguras.
-                </p>
-                <div class="mt-6">
-                    <h3 class="text-2xl font-bold text-green-400 mb-4">Contatos</h3>
-                    <ul class="list-none space-y-2">
-                        <li><strong>Celular:</strong> <a href="https://wa.me/5545998394505" target="_blank" class="text-green-300 hover:text-green-400 underline">(45) 99839-4505</a></li>
-                        <li><strong>Email:</strong> <a href="mailto:marcosgimenesdev@gmail.com" class="text-green-300 hover:text-green-400 underline">marcosgimenesdev@gmail.com</a></li>
-                        <li><a href="https://www.linkedin.com/in/marcos-gimenes-73291627a/" target="_blank" class="text-green-300 hover:text-green-400 underline">Meu LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
+  <header class="border-b border-green-400 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="text-xl font-bold text-green-400 flex items-center">
+        <i class="fas fa-code mr-2"></i>
+        <span>MarcosGimenes.</span>
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="#about" class="text-green-400 hover:text-white transition flex items-center">
+          <i class="fas fa-user mr-2"></i> Sobre
+        </a>
+        <a href="#skills" class="text-green-400 hover:text-white transition flex items-center">
+          <i class="fas fa-laptop-code mr-2"></i> Habilidades
+        </a>
+        <a href="#projects" class="text-green-400 hover:text-white transition flex items-center">
+          <i class="fas fa-project-diagram mr-2"></i> Projetos
+        </a>
+        <a href="#contact" class="text-green-400 hover:text-white transition flex items-center">
+          <i class="fas fa-envelope mr-2"></i> Contato
+        </a>
+      </div>
+      <button class="md:hidden text-green-400">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </nav>
+  </header>
+
+  <section id="home" class="container mx-auto px-6 py-24">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="max-w-2xl">
+        <p class="text-lg text-green-300 mb-2">Olá, eu sou</p>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4">
+          <span class="text-green-400">Marcos</span> Gimenes
+        </h1>
+        <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">
+          Desenvolvedor <span class="text-green-300">Fullstack</span>.
+        </h2>
+        <p class="text-gray-400 text-lg mb-8">
+          Apaixonado por tecnologia e resolução de problemas. Atualmente cursando Análise e Desenvolvimento de Sistemas na PUCPR.
+        </p>
+        <div class="flex gap-4">
+          <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg shadow-md transition flex items-center">
+            <i class="fas fa-paper-plane mr-2"></i> Contato
+          </a>
+          <a href="#projects" class="border border-green-400 text-green-400 hover:bg-green-400/10 px-6 py-3 rounded-lg transition flex items-center">
+            <i class="fas fa-eye mr-2"></i> Ver Projetos
+          </a>
         </div>
-    </section>
-</main>
+      </div>
+      <div class="mt-16 md:mt-0">
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-full bg-green-400/20 blur-md animate-pulse"></div>
+          <div class="relative rounded-full border-4 border-green-400 p-1">
+            <img src="assets/foto_topzera.jpg" alt="Marcos Gimenes" class="w-64 h-64 rounded-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="about" class="container mx-auto px-6 py-16 mb-24">
+    <div class="bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-8">
+      <div class="flex items-center mb-6">
+        <i class="fas fa-user text-green-400 text-2xl mr-3"></i>
+        <h2 class="text-3xl text-green-400 font-bold">Sobre Mim</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <p class="mb-4 text-lg">
+            Sou <span class="text-green-300 font-semibold">Desenvolvedor Fullstack.</span>, com foco em desenvolvimento de sistemas robustos e eficientes.
+          </p>
+          <p class="mb-4">
+            Atualmente curso <span class="text-green-300">Análise e Desenvolvimento de Sistemas na PUCPR</span> e dedico meu tempo ao aprendizado contínuo de tecnologias backend.
+          </p>
+          <p class="mb-4">
+            <strong class="text-green-400">🚀 Minha missão:</strong> Criar soluções robustas, performáticas e seguras que resolvam problemas reais.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl text-green-300 font-semibold mb-4 flex items-center">
+            <i class="fas fa-graduation-cap mr-2"></i> Formação Acadêmica
+          </h3>
+          <div class="bg-gray-800/50 border-l-4 border-green-400 p-4 rounded-r-lg">
+            <h4 class="font-bold">Tecnólogo em Análise e Desenvolvimento de Sistemas</h4>
+            <p class="text-gray-400">PUCPR - Pontífica Universidade Católica do Paraná</p>
+            <p class="text-sm text-gray-500">2025 - Atualmente</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Projetos -->
-        <section id="projects" class="mb-20">
-            <h2 class="text-3xl font-bold text-green-400 mb-8 text-center">Projetos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- Projeto Security Key -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl text-green-300 font-semibold mb-4 text-center">
-                        <a href="https://github.com/MarcosFGimenes/security-key" target="_blank" class="hover:text-green-400">Security Key</a>
-                    </h3>
-                    <p class="leading-relaxed mb-4 text-center">
-                        Um projeto que demonstra funcionalidades como:
-                        <ul class="list-disc pl-6">
-                            <li>Login seguro com Firebase Auth.</li>
-                            <li>Armazenamento de dados no Cloud Firestore.</li>
-                        </ul>
-                    </p>
-                    <!-- Galeria de imagens -->
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                        <img src="assets/securitykey2.png" alt="Security Key 2" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-110 object-cover">
-                        <img src="assets/securitykey3.png" alt="Security Key 3" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-110 object-cover">
-                        <img src="assets/securitykey4.png" alt="Security Key 4" class="rounded-lg shadow-lg w-full h-auto transition-transform duration-250 hover:scale-110 object-cover">
-                    </div>
-                </div>
-
-                <!-- Projeto Agendamento -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl text-green-300 font-semibold mb-4 text-center">
-                        <a href="https://camylash.vercel.app/" target="_blank" class="hover:text-green-400">Sistema de Agendamento de Horários</a>
-                    </h3>
-                    <p class="leading-relaxed mb-4 text-center">
-                        Sistema de agendamento de horários online, desenvolvido com React, Node.js e MongoDB:
-                        <ul class="list-disc pl-6">
-                            <li>Gerenciamento de agendamentos.</li>
-                            <li>Administração de horários padrão.</li>
-                            <li>Integração com banco de dados MongoDB.</li>
-                        </ul>
-                    </p>
-                    <!-- Carrossel -->
-                    <div class="carousel mt-6" id="carousel-agendamento">
-                        <img src="assets/agendamento1.png" alt="Agendamento 1" class="rounded-lg active">
-                        <img src="assets/agendamento2.png" alt="Agendamento 2" class="rounded-lg">
-                        <img src="assets/agendamento3.png" alt="Agendamento 3" class="rounded-lg">
-                        <!-- Controles do carrossel -->
-                        <div class="carousel-controls">
-                            <button onclick="prevSlide('carousel-agendamento')">❮</button>
-                            <button onclick="nextSlide('carousel-agendamento')">❯</button>
-                        </div>
-                    </div>
-                </div>
+  <section id="skills" class="container mx-auto px-6 py-16 mb-24">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl text-green-400 font-bold inline-flex items-center">
+        <i class="fas fa-laptop-code mr-3"></i> Habilidades Técnicas
+      </h2>
+      <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Tecnologias e ferramentas que utilizo no meu dia a dia</p>
+    </div>
+  
+    <div class="bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+  
+        <!-- Linguagens -->
+        <div>
+          <h3 class="text-xl text-green-300 mb-4">Linguagens</h3>
+          <div class="space-y-4">
+            <div class="tech-icon">
+              <i class="fab fa-java text-4xl text-orange-500"></i>
+              <p class="mt-2">Java</p>
             </div>
-        </section>
-
-        <!-- Certificações -->
-        <section id="certifications" class="mb-20">
-            <h2 class="text-3xl font-bold text-green-400 mb-8 text-center">Certificações</h2>
-            <div class="space-y-8">
-                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl text-green-300 font-semibold mb-2">TOFAS - JavaScript Nível 1</h3>
-                    <p class="leading-relaxed mb-4">
-                        Certificação emitida pelo <strong class="text-green-400">TOFAS</strong>, através do "International Test of Fundamental Academic Skills."
-                    </p>
-                    <a href="assets/MARCOS_FARINELLI_GIMENES.pdf" target="_blank" download class="text-green-300 underline hover:text-green-400 transition-all duration-300">📄 Baixar Certificado</a>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
-                    <h3 class="text-2xl text-green-300 font-semibold mb-2">Beyond - Desenvolvedor Flutter</h3>
-                    <p class="leading-relaxed mb-4">
-                        Certificação emitida pela <strong class="text-green-400">Beyond Systems</strong>, após conquistar a primeira colocação em um concurso de desenvolvimento mobile com Flutter integrado ao Firebase.
-                    </p>
-                    <a href="assets/CERTIFICADO 1º DEV FLUTTER - MARCOS GIMENES.pdf" target="_blank" download class="text-green-300 underline hover:text-green-400 transition-all duration-300">📄 Baixar Certificado</a>
-                </div>
+            <div class="tech-icon">
+              <i class="fab fa-js text-4xl text-yellow-400"></i>
+              <p class="mt-2">JavaScript</p>
             </div>
-        </section>
-    </main>
+            <div class="tech-icon">
+              <i class="fab fa-python text-4xl text-blue-400"></i>
+              <p class="mt-2">Python</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fab fa-html5 text-4xl text-orange-500"></i>
+              <p class="mt-2">HTML</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
+              <p class="mt-2">CSS</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-code text-4xl text-purple-400"></i>
+              <p class="mt-2">TypeScript</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Backend -->
+        <div>
+          <h3 class="text-xl text-green-300 mb-4">Backend</h3>
+          <div class="space-y-4">
+            <div class="tech-icon">
+              <i class="fab fa-node text-4xl text-green-500"></i>
+              <p class="mt-2">Node.js</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-leaf text-4xl text-green-600"></i>
+              <p class="mt-2">Spring Boot</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-server text-4xl text-gray-400"></i>
+              <p class="mt-2">APIs REST</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-lock text-4xl text-red-400"></i>
+              <p class="mt-2">JWT/Auth</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-network-wired text-4xl text-blue-400"></i>
+              <p class="mt-2">GraphQL</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Bancos de Dados -->
+        <div>
+          <h3 class="text-xl text-green-300 mb-4">Bancos de Dados</h3>
+          <div class="space-y-4">
+            <div class="tech-icon">
+              <i class="fas fa-database text-4xl text-blue-500"></i>
+              <p class="mt-2">MySQL</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-leaf text-4xl text-green-600"></i>
+              <p class="mt-2">MongoDB</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-fire text-4xl text-orange-400"></i>
+              <p class="mt-2">Firebase</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-database text-4xl text-yellow-400"></i>
+              <p class="mt-2">PostgreSQL</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-cube text-4xl text-indigo-500"></i>
+              <p class="mt-2">SQLite</p>
+            </div>
+          </div>
+        </div>
+        <!-- Frontend -->
+        <div>
+          <h3 class="text-xl text-green-300 mb-4">Frontend</h3>
+          <div class="space-y-4">
+            <div class="tech-icon">
+              <i class="fab fa-react text-4xl text-blue-400"></i>
+              <p class="mt-2">React</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-wind text-4xl text-cyan-300"></i>
+              <p class="mt-2">Tailwind CSS</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fab fa-bootstrap text-4xl text-purple-500"></i>
+              <p class="mt-2">Bootstrap</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fab fa-vuejs text-4xl text-green-400"></i>
+              <p class="mt-2">Vue.js</p>
+            </div>
+            <div class="tech-icon">
+              <i class="fas fa-cubes text-4xl text-indigo-400"></i>
+              <p class="mt-2">Figma</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="projects" class="container mx-auto px-6 py-16 mb-24">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl text-green-400 font-bold inline-flex items-center">
+        <i class="fas fa-project-diagram mr-3"></i> Meus Projetos
+      </h2>
+      <p class="text-gray-400 mt-2">Alguns dos projetos que desenvolvi</p>
+    </div>
 
-    <!-- Rodapé -->
-    <footer class="bg-gray-800 py-6 text-center">
-        <div class="container mx-auto">
-            <p class="mb-4">
-                <a href="https://www.linkedin.com/in/marcos-gimenes-73291627a/" target="_blank" class="text-green-300 hover:text-green-400 underline">LinkedIn</a>
-                &nbsp;|&nbsp;
-                <a href="https://wa.me/5545998394505" target="_blank" class="text-green-300 hover:text-green-400 underline">WhatsApp: (45) 99839-4505</a>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Projeto 1 -->
+      <div class="bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-6 hover:scale-[1.02] transition-all duration-300 flex flex-col">
+        <div class="flex-grow">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-lock text-green-400 text-xl mr-2"></i>
+            <h3 class="text-2xl text-green-300 font-semibold">
+              <a href="https://github.com/MarcosFGimenes/security-key" target="_blank" class="hover:text-white">Security Key</a>
+            </h3>
+          </div>
+          <p class="mb-4 text-gray-300">
+            Sistema de autenticação seguro com Firebase Auth e armazenamento no Cloud Firestore.
+          </p>
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <img src="assets/securitykey2.png" class="rounded-lg hover:scale-105 transition cursor-pointer" alt="Security Key">
+            <img src="assets/securitykey3.png" class="rounded-lg hover:scale-105 transition cursor-pointer" alt="Security Key">
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Firebase</span>
+          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Autenticação</span>
+          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Node.js</span>
+        </div>
+      </div>
+
+      <!-- Projeto 3 -->
+      <div class="bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-6 hover:scale-[1.02] transition-all duration-300 flex flex-col">
+        <div class="flex-grow">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-hamburger text-green-400 text-xl mr-2"></i>
+            <h3 class="text-2xl text-green-300 font-semibold">
+              <a href="#" target="_blank" class="hover:text-white">Landing Page Hamburgueria</a>
+            </h3>
+          </div>
+          <p class="mb-4 text-gray-300">
+            Landing page moderna e responsiva para uma hamburgueria, criada com HTML e Tailwind CSS.
+          </p>
+          <div class="mb-4">
+            <img src="assets/projeto-burger.png" class="rounded-lg hover:scale-105 transition cursor-pointer" alt="Landing Page Hamburgueria">
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">HTML</span>
+          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Frontend</span>
+        </div>
+      </div>
+
+      <!-- Projeto 4 (Novo) -->
+      <div class="bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-6 hover:scale-[1.02] transition-all duration-300 flex flex-col">
+        <div class="flex-grow">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-rocket text-green-400 text-xl mr-2"></i>
+            <h3 class="text-2xl text-green-300 font-semibold">
+              <a href="#" target="_blank" class="hover:text-white">Hairflow - solução para salões</a>
+            </h3>
+          </div>
+          <p class="mb-4 text-gray-300">
+            Uma plataforma inovadora para gestão de salões de beleza, com agendamento online, controle de profissionais e diversos recursos para otimizar o atendimento.
+          </p>
+          <div class="mb-4">
+            <img src="assets/hairflow.png" class="rounded-lg hover:scale-105 transition cursor-pointer" alt="Preview do Projeto">
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Next.js</span>
+          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Node</span>
+          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Tailwindcss</span>
+        </div>
+      </div>
+
+    </div>
+    <section id="contact" class="container mx-auto px-6 py-24 mb-24">
+        <div class="group flex flex-col md:flex-row items-center justify-between bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-10 transition-all duration-500 hover:border-green-300 hover:shadow-[0_0_25px_-5px_rgba(50,255,150,0.3)]">
+      
+          <div class="mb-10 md:mb-0 md:mr-10">
+            <h2 class="text-4xl md:text-5xl text-white font-bold mb-4">
+              Tem um projeto?<br>
+              <span class="text-green-400">Vamos conversar.</span>
+            </h2>
+            <p class="text-gray-300 max-w-md">
+              Aberto para parcerias, freelances e oportunidades. Envie uma mensagem nos canais abaixo.
             </p>
-            <p class="text-gray-400">Desenvolvido por Marcos Gimenes, 2025</p>
+          </div>
+      
+          <div class="bg-black/60 backdrop-blur-md border border-green-500 rounded-3xl p-8 w-full md:w-auto md:min-w-[420px]">
+            <h3 class="text-2xl text-green-300 font-semibold mb-6">Entre em contato</h3>
+            <div class="space-y-4">
+              
+              <a href="https://wa.me/5545998394505" target="_blank" class="flex items-center group/link p-2 rounded-lg transition-all duration-300 hover:bg-green-500/10">
+                <i class="fab fa-whatsapp text-green-400 text-3xl mr-5 transition-all duration-300 group-hover/link:text-green-300"></i>
+                <span class="text-lg text-gray-300 transition-all duration-300 group-hover/link:text-white group-hover/link:translate-x-2">
+                  (45) 99839-4505
+                </span>
+              </a>
+      
+              <a href="mailto:marcosgimenesdev@gmail.com" class="flex items-center group/link p-2 rounded-lg transition-all duration-300 hover:bg-green-500/10">
+                <i class="fas fa-envelope text-green-400 text-3xl mr-5 transition-all duration-300 group-hover/link:text-green-300"></i>
+                <span class="text-lg text-gray-300 transition-all duration-300 group-hover/link:text-white group-hover/link:translate-x-2">
+                  marcosgimenesdev@gmail.com
+                </span>
+              </a>
+      
+              <a href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" class="flex items-center group/link p-2 rounded-lg transition-all duration-300 hover:bg-green-500/10">
+                <i class="fab fa-linkedin text-green-400 text-3xl mr-5 transition-all duration-300 group-hover/link:text-green-300"></i>
+                <span class="text-lg text-gray-300 transition-all duration-300 group-hover/link:text-white group-hover/link:translate-x-2">
+                  LinkedIn
+                </span>
+              </a>
+              
+              <a href="https://github.com/MarcosFGimenes" target="_blank" class="flex items-center group/link p-2 rounded-lg transition-all duration-300 hover:bg-green-500/10">
+                <i class="fab fa-github text-green-400 text-3xl mr-5 transition-all duration-300 group-hover/link:text-green-300"></i>
+                <span class="text-lg text-gray-300 transition-all duration-300 group-hover/link:text-white group-hover/link:translate-x-2">
+                  GitHub
+                </span>
+              </a>
         </div>
-    </footer>
+      </section>
 
-    <!-- Scripts -->
-    <script>
-        function showSlide(carouselId, index) {
-            const carousel = document.getElementById(carouselId);
-            const slides = carousel.querySelectorAll('img');
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) {
-                    slide.classList.add('active');
-                }
-            });
-        }
+  <footer class="footer bg-black/80 backdrop-blur-lg border-t border-green-400/30 py-8">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center mb-4 md:mb-0">
+          <i class="fas fa-code text-green-400 text-xl mr-2"></i>
+          <span class="text-xl font-bold text-green-400">MarcosGimenes.</span>
+        </div>
+        <div class="flex space-x-6">
+          <a href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" class="text-gray-400 hover:text-green-400 text-xl">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/MarcosFGimenes" target="_blank" class="text-gray-400 hover:text-green-400 text-xl">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://wa.me/5545998394505" target="_blank" class="text-gray-400 hover:text-green-400 text-xl">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-500">
+        <p>© 2025 Marcos Gimenes. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
 
-        function nextSlide(carouselId) {
-            const carousel = document.getElementById(carouselId);
-            const slides = carousel.querySelectorAll('img');
-            const activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
-            const nextIndex = (activeIndex + 1) % slides.length;
-            showSlide(carouselId, nextIndex);
-        }
-
-        function prevSlide(carouselId) {
-            const carousel = document.getElementById(carouselId);
-            const slides = carousel.querySelectorAll('img');
-            const activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
-            const prevIndex = (activeIndex - 1 + slides.length) % slides.length;
-            showSlide(carouselId, prevIndex);
-        }
-    </script>
+  <script>
+    // Simple mobile menu toggle (would need proper implementation)
+    document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+      const nav = document.querySelector('nav .hidden.md\\:flex');
+      nav.classList.toggle('hidden');
+      nav.classList.toggle('flex');
+      nav.classList.toggle('flex-col');
+      nav.classList.toggle('absolute');
+      nav.classList.toggle('top-16');
+      nav.classList.toggle('right-6');
+      nav.classList.toggle('bg-black');
+      nav.classList.toggle('p-4');
+      nav.classList.toggle('rounded-lg');
+      nav.classList.toggle('border');
+      nav.classList.toggle('border-green-400');
+    });
+  </script>
 </body>
 </html>
