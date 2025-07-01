@@ -1,413 +1,222 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="bg-gradient-to-br from-black via-gray-900 to-black min-h-screen flex flex-col">
+<html lang="pt-br" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marcos Gimenes - Desenvolvedor Fullstack</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    .tech-icon {
-      transition: all 0.3s ease;
-    }
-    .tech-icon:hover {
-      transform: translateY(-5px);
-      filter: drop-shadow(0 5px 5px rgba(74, 222, 128, 0.3));
-    }
-    .footer {
-      margin-top: auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Gimenes - Soluções Fullstack</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A; /* Slate 900 */
+            color: #E2E8F0; /* Slate 200 */
+        }
+
+        .text-accent { color: #22d3ee; }
+        .bg-accent { background-color: #22d3ee; }
+        .border-accent { border-color: #22d3ee; }
+
+        .cta-button {
+            background-color: #22d3ee;
+            color: #0F172A;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #67e8f9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(34, 211, 238, 0.2);
+        }
+
+        .outline-button {
+            border: 1px solid #22d3ee;
+            color: #22d3ee;
+            transition: all 0.3s ease;
+        }
+        
+        .outline-button:hover {
+            background-color: rgba(34, 211, 238, 0.1);
+        }
+    </style>
 </head>
-<body class="text-gray-200 font-sans flex flex-col min-h-screen">
+<body class="antialiased">
 
-  <header class="border-b border-green-400 bg-black/80 backdrop-blur-md sticky top-0 z-50">
-    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-      <div class="text-xl font-bold text-green-400 flex items-center">
-        <i class="fas fa-code mr-2"></i>
-        <span>MarcosGimenes.</span>
-      </div>
-      <div class="hidden md:flex space-x-8">
-        <a href="#about" class="text-green-400 hover:text-white transition flex items-center">
-          <i class="fas fa-user mr-2"></i> Sobre
-        </a>
-        <a href="#skills" class="text-green-400 hover:text-white transition flex items-center">
-          <i class="fas fa-laptop-code mr-2"></i> Habilidades
-        </a>
-        <a href="#projects" class="text-green-400 hover:text-white transition flex items-center">
-          <i class="fas fa-project-diagram mr-2"></i> Projetos
-        </a>
-        <a href="#contact" class="text-green-400 hover:text-white transition flex items-center">
-          <i class="fas fa-envelope mr-2"></i> Contato
-        </a>
-      </div>
-      <button class="md:hidden text-green-400">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </nav>
-  </header>
+    <header class="bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-700/50">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+            <a href="#" class="text-xl font-bold text-accent flex items-center">
+                <i class="fas fa-code mr-2"></i>
+                <span>MarcosGimenes.</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-slate-300 hover:text-accent transition">Sobre</a>
+                <a href="#skills" class="text-slate-300 hover:text-accent transition">Habilidades</a>
+                <a href="#projects" class="text-slate-300 hover:text-accent transition">Projetos</a>
+                <a href="#contact" class="cta-button font-semibold px-5 py-2 rounded-md">
+                    <i class="fas fa-paper-plane mr-2"></i> Fale Comigo
+                </a>
+            </div>
+            <button class="md:hidden text-accent" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="flex flex-col space-y-4 px-6 pb-4">
+                <a href="#about" class="text-slate-300 hover:text-accent transition">Sobre</a>
+                <a href="#skills" class="text-slate-300 hover:text-accent transition">Habilidades</a>
+                <a href="#projects" class="text-slate-300 hover:text-accent transition">Projetos</a>
+                <a href="#contact" class="text-slate-300 hover:text-accent transition">Contato</a>
+            </div>
+        </div>
+    </header>
 
-  <section id="home" class="container mx-auto px-6 py-24">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="max-w-2xl">
-        <p class="text-lg text-green-300 mb-2">Olá, eu sou</p>
-        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4">
-          <span class="text-green-400">Marcos</span> Gimenes
-        </h1>
-        <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">
-          Desenvolvedor <span class="text-green-300">Fullstack</span>.
-        </h2>
-        <p class="text-gray-400 text-lg mb-8">
-          Apaixonado por tecnologia e resolução de problemas. Atualmente cursando Análise e Desenvolvimento de Sistemas na PUCPR.
-        </p>
-        <div class="flex gap-4">
-          <a href="#contact" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg shadow-md transition flex items-center">
-            <i class="fas fa-paper-plane mr-2"></i> Contato
-          </a>
-          <a href="#projects" class="border border-green-400 text-green-400 hover:bg-green-400/10 px-6 py-3 rounded-lg transition flex items-center">
-            <i class="fas fa-eye mr-2"></i> Ver Projetos
-          </a>
-        </div>
-      </div>
-      <div class="mt-16 md:mt-0">
-        <div class="relative">
-          <div class="absolute -inset-4 rounded-full bg-green-400/20 blur-md animate-pulse"></div>
-          <div class="relative rounded-full border-4 border-green-400 p-1">
-            <img src="assets/foto_topzera.jpg" alt="Marcos Gimenes" class="w-64 h-64 rounded-full object-cover">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <main>
+        <section id="home" class="container mx-auto px-6 py-24 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-slate-100">
+                    Soluções Fullstack que <span class="text-accent">Impulsionam</span> Negócios
+                </h1>
+                <p class="text-lg text-slate-400 mb-8">
+                    Crio aplicações web robustas e escaláveis, transformando suas ideias em realidade digital com performance e design moderno.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="#contact" class="cta-button font-semibold px-8 py-3 rounded-md">Agendar Consultoria</a>
+                    <a href="#projects" class="outline-button font-semibold px-8 py-3 rounded-md">Ver Projetos</a>
+                </div>
+            </div>
+        </section>
 
-  <section id="about" class="container mx-auto px-6 py-16 mb-24">
-    <div class="bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-8">
-      <div class="flex items-center mb-6">
-        <i class="fas fa-user text-green-400 text-2xl mr-3"></i>
-        <h2 class="text-3xl text-green-400 font-bold">Sobre Mim</h2>
-      </div>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div>
-          <p class="mb-4 text-lg">
-            Sou <span class="text-green-300 font-semibold">Desenvolvedor Fullstack.</span>, com foco em desenvolvimento de sistemas robustos e eficientes.
-          </p>
-          <p class="mb-4">
-            Atualmente curso <span class="text-green-300">Análise e Desenvolvimento de Sistemas na PUCPR</span> e dedico meu tempo ao aprendizado contínuo de tecnologias backend.
-          </p>
-          <p class="mb-4">
-            <strong class="text-green-400">🚀 Minha missão:</strong> Criar soluções robustas, performáticas e seguras que resolvam problemas reais.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-xl text-green-300 font-semibold mb-4 flex items-center">
-            <i class="fas fa-graduation-cap mr-2"></i> Formação Acadêmica
-          </h3>
-          <div class="bg-gray-800/50 border-l-4 border-green-400 p-4 rounded-r-lg">
-            <h4 class="font-bold">Tecnólogo em Análise e Desenvolvimento de Sistemas</h4>
-            <p class="text-gray-400">PUCPR - Pontífica Universidade Católica do Paraná</p>
-            <p class="text-sm text-gray-500">2025 - Atualmente</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <section id="about" class="container mx-auto px-6 py-20">
+             <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-100">Sobre Mim</h2>
+                <p class="text-slate-400 mt-2">Minha jornada e meu compromisso com a qualidade.</p>
+            </div>
+            <div class="grid md:grid-cols-5 gap-10 items-center">
+                <div class="md:col-span-2">
+                    <img src="assets/foto_topzera.jpg" alt="Marcos Gimenes" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:col-span-3">
+                    <h3 class="text-2xl font-semibold text-accent mb-4">Desenvolvedor Fullstack e Parceiro de Negócios</h3>
+                    <p class="text-slate-300 mb-4">
+                        Com mais de 3 anos de experiência e formação em <span class="font-semibold text-slate-100">Análise e Desenvolvimento de Sistemas</span> pela PUCPR, meu foco é entregar mais do que código: entrego soluções que resolvem problemas e agregam valor real ao seu negócio.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span>Comunicação transparente e foco nos seus objetivos.</span></div>
+                        <div class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span>Uso de tecnologias modernas para garantir escalabilidade.</span></div>
+                        <div class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span>Compromisso com prazos e qualidade em cada entrega.</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="skills" class="container mx-auto px-6 py-16 mb-24">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl text-green-400 font-bold inline-flex items-center">
-        <i class="fas fa-laptop-code mr-3"></i> Habilidades Técnicas
-      </h2>
-      <p class="text-gray-400 mt-2 max-w-2xl mx-auto">Tecnologias e ferramentas que utilizo no meu dia a dia</p>
-    </div>
-  
-    <div class="bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-  
-        <!-- Linguagens -->
-        <div>
-          <h3 class="text-xl text-green-300 mb-4">Linguagens</h3>
-          <div class="space-y-4">
-            <div class="tech-icon">
-              <i class="fab fa-java text-4xl text-orange-500"></i>
-              <p class="mt-2">Java</p>
+        <section id="skills" class="py-20 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-100">Minhas Habilidades</h2>
+                    <p class="text-slate-400 mt-2">As ferramentas que utilizo para construir soluções de ponta.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 text-center">
+                    <div class="tech-icon"><i class="fab fa-react text-4xl text-accent"></i><p class="mt-2 text-slate-300">React</p></div>
+                    <div class="tech-icon"><i class="fab fa-node-js text-4xl text-accent"></i><p class="mt-2 text-slate-300">Node.js</p></div>
+                    <div class="tech-icon"><i class="fab fa-java text-4xl text-accent"></i><p class="mt-2 text-slate-300">Java</p></div>
+                    <div class="tech-icon"><i class="fas fa-leaf text-4xl text-accent"></i><p class="mt-2 text-slate-300">Spring Boot</p></div>
+                    <div class="tech-icon"><i class="fab fa-python text-4xl text-accent"></i><p class="mt-2 text-slate-300">Python</p></div>
+                    <div class="tech-icon"><i class="fas fa-database text-4xl text-accent"></i><p class="mt-2 text-slate-300">SQL/NoSQL</p></div>
+                    <div class="tech-icon"><i class="fab fa-html5 text-4xl text-accent"></i><p class="mt-2 text-slate-300">HTML5</p></div>
+                    <div class="tech-icon"><i class="fab fa-css3-alt text-4xl text-accent"></i><p class="mt-2 text-slate-300">CSS3</p></div>
+                    <div class="tech-icon"><i class="fas fa-wind text-4xl text-accent"></i><p class="mt-2 text-slate-300">Tailwind CSS</p></div>
+                    <div class="tech-icon"><i class="fab fa-figma text-4xl text-accent"></i><p class="mt-2 text-slate-300">Figma</p></div>
+                </div>
             </div>
-            <div class="tech-icon">
-              <i class="fab fa-js text-4xl text-yellow-400"></i>
-              <p class="mt-2">JavaScript</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fab fa-python text-4xl text-blue-400"></i>
-              <p class="mt-2">Python</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fab fa-html5 text-4xl text-orange-500"></i>
-              <p class="mt-2">HTML</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
-              <p class="mt-2">CSS</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-code text-4xl text-purple-400"></i>
-              <p class="mt-2">TypeScript</p>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Backend -->
-        <div>
-          <h3 class="text-xl text-green-300 mb-4">Backend</h3>
-          <div class="space-y-4">
-            <div class="tech-icon">
-              <i class="fab fa-node text-4xl text-green-500"></i>
-              <p class="mt-2">Node.js</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-leaf text-4xl text-green-600"></i>
-              <p class="mt-2">Spring Boot</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-server text-4xl text-gray-400"></i>
-              <p class="mt-2">APIs REST</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-lock text-4xl text-red-400"></i>
-              <p class="mt-2">JWT/Auth</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-network-wired text-4xl text-blue-400"></i>
-              <p class="mt-2">GraphQL</p>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Bancos de Dados -->
-        <div>
-          <h3 class="text-xl text-green-300 mb-4">Bancos de Dados</h3>
-          <div class="space-y-4">
-            <div class="tech-icon">
-              <i class="fas fa-database text-4xl text-blue-500"></i>
-              <p class="mt-2">MySQL</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-leaf text-4xl text-green-600"></i>
-              <p class="mt-2">MongoDB</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-fire text-4xl text-orange-400"></i>
-              <p class="mt-2">Firebase</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-database text-4xl text-yellow-400"></i>
-              <p class="mt-2">PostgreSQL</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-cube text-4xl text-indigo-500"></i>
-              <p class="mt-2">SQLite</p>
-            </div>
-          </div>
-        </div>
-        <!-- Frontend -->
-        <div>
-          <h3 class="text-xl text-green-300 mb-4">Frontend</h3>
-          <div class="space-y-4">
-            <div class="tech-icon">
-              <i class="fab fa-react text-4xl text-blue-400"></i>
-              <p class="mt-2">React</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-wind text-4xl text-cyan-300"></i>
-              <p class="mt-2">Tailwind CSS</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fab fa-bootstrap text-4xl text-purple-500"></i>
-              <p class="mt-2">Bootstrap</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fab fa-vuejs text-4xl text-green-400"></i>
-              <p class="mt-2">Vue.js</p>
-            </div>
-            <div class="tech-icon">
-              <i class="fas fa-cubes text-4xl text-indigo-400"></i>
-              <p class="mt-2">Figma</p>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
-  
-  <section id="projects" class="container mx-auto px-6 py-16 mb-24">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl text-green-400 font-bold inline-flex items-center">
-        <i class="fas fa-project-diagram mr-3"></i> Meus Projetos
-      </h2>
-      <p class="text-gray-400 mt-2">Alguns dos projetos que desenvolvi</p>
-    </div>
+        </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section id="projects" class="container mx-auto px-6 py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-100">Projetos de Destaque</h2>
+                <p class="text-slate-400 mt-2">Uma amostra do meu trabalho e do valor que gero.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="assets/securitykey2.png" class="w-full h-48 object-cover" alt="Security Key">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-100 mb-2">Security Key</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Sistema de segurança com autenticação via Firebase Auth, aumentando a proteção de dados.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Firebase</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Node.js</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Autenticação</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="assets/projeto-burger.png" class="w-full h-48 object-cover" alt="Landing Page Hamburgueria">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-100 mb-2">Landing Page de Conversão</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Página otimizada para hamburgueria local, resultando em 45% de aumento nas vendas diretas.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">HTML</span>
+                             <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Frontend</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="assets/hairflow.png" class="w-full h-48 object-cover" alt="Hairflow">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-slate-100 mb-2">Hairflow - Gestão de Salões</h3>
+                        <p class="text-slate-400 mb-4 text-sm">Plataforma SaaS para automação de agendamentos e gestão financeira para salões de beleza.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Next.js</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Node.js</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">SaaS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <!-- Projeto 1 -->
-      <div class="bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-6 hover:scale-[1.02] transition-all duration-300 flex flex-col">
-        <div class="flex-grow">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-lock text-green-400 text-xl mr-2"></i>
-            <h3 class="text-2xl text-green-300 font-semibold">
-              <a href="https://github.com/MarcosFGimenes/security-key" target="_blank" class="hover:text-white">Security Key</a>
-            </h3>
-          </div>
-          <p class="mb-4 text-gray-300">
-            Sistema de autenticação seguro com Firebase Auth e armazenamento no Cloud Firestore.
-          </p>
-          <div class="grid grid-cols-2 gap-3 mb-4">
-            <img src="assets/securitykey2.png" class="rounded-lg hover:scale-105 transition cursor-pointer" alt="Security Key">
-            <img src="assets/securitykey3.png" class="rounded-lg hover:scale-105 transition cursor-pointer" alt="Security Key">
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Firebase</span>
-          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Autenticação</span>
-          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Node.js</span>
-        </div>
-      </div>
+        <section id="contact" class="py-20 bg-slate-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold text-slate-100">Vamos Construir Algo Incrível?</h2>
+                    <p class="text-slate-400 mt-4 mb-8">
+                        Estou disponível para novos projetos e parcerias. Se você tem uma ideia e precisa de um desenvolvedor comprometido, entre em contato.
+                    </p>
+                    <a href="mailto:marcosgimenesdev@gmail.com" class="cta-button font-semibold px-10 py-4 rounded-md text-lg">
+                        <i class="fas fa-envelope mr-2"></i> Enviar um Email
+                    </a>
+                    <div class="mt-8 text-slate-400">
+                        <p>Ou me encontre nas redes sociais:</p>
+                        <div class="flex justify-center space-x-6 mt-4">
+                            <a href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" class="text-slate-400 hover:text-accent text-2xl"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/MarcosFGimenes" target="_blank" class="text-slate-400 hover:text-accent text-2xl"><i class="fab fa-github"></i></a>
+                            <a href="https://wa.me/5545998394505" target="_blank" class="text-slate-400 hover:text-accent text-2xl"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-      <!-- Projeto 3 -->
-      <div class="bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-6 hover:scale-[1.02] transition-all duration-300 flex flex-col">
-        <div class="flex-grow">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-hamburger text-green-400 text-xl mr-2"></i>
-            <h3 class="text-2xl text-green-300 font-semibold">
-              <a href="#" target="_blank" class="hover:text-white">Landing Page Hamburgueria</a>
-            </h3>
-          </div>
-          <p class="mb-4 text-gray-300">
-            Landing page moderna e responsiva para uma hamburgueria, criada com HTML e Tailwind CSS.
-          </p>
-          <div class="mb-4">
-            <img src="assets/projeto-burger.png" class="rounded-lg hover:scale-105 transition cursor-pointer" alt="Landing Page Hamburgueria">
-          </div>
+    <footer class="bg-slate-900 border-t border-slate-700/50 py-6">
+        <div class="container mx-auto px-6 text-center text-slate-500">
+            <p>&copy; 2025 Marcos Gimenes. Todos os direitos reservados.</p>
         </div>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">HTML</span>
-          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
-          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Frontend</span>
-        </div>
-      </div>
+    </footer>
 
-      <!-- Projeto 4 (Novo) -->
-      <div class="bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-6 hover:scale-[1.02] transition-all duration-300 flex flex-col">
-        <div class="flex-grow">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-rocket text-green-400 text-xl mr-2"></i>
-            <h3 class="text-2xl text-green-300 font-semibold">
-              <a href="#" target="_blank" class="hover:text-white">Hairflow - solução para salões</a>
-            </h3>
-          </div>
-          <p class="mb-4 text-gray-300">
-            Uma plataforma inovadora para gestão de salões de beleza, com agendamento online, controle de profissionais e diversos recursos para otimizar o atendimento.
-          </p>
-          <div class="mb-4">
-            <img src="assets/hairflow.png" class="rounded-lg hover:scale-105 transition cursor-pointer" alt="Preview do Projeto">
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-2 mt-auto">
-          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Next.js</span>
-          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Node</span>
-          <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm">Tailwindcss</span>
-        </div>
-      </div>
-
-    </div>
-    <section id="contact" class="container mx-auto px-6 py-24 mb-24">
-        <div class="group flex flex-col md:flex-row items-center justify-between bg-black/40 backdrop-blur-lg border border-green-400 rounded-3xl p-10 transition-all duration-500 hover:border-green-300 hover:shadow-[0_0_25px_-5px_rgba(50,255,150,0.3)]">
-      
-          <div class="mb-10 md:mb-0 md:mr-10">
-            <h2 class="text-4xl md:text-5xl text-white font-bold mb-4">
-              Tem um projeto?<br>
-              <span class="text-green-400">Vamos conversar.</span>
-            </h2>
-            <p class="text-gray-300 max-w-md">
-              Aberto para parcerias, freelances e oportunidades. Envie uma mensagem nos canais abaixo.
-            </p>
-          </div>
-      
-          <div class="bg-black/60 backdrop-blur-md border border-green-500 rounded-3xl p-8 w-full md:w-auto md:min-w-[420px]">
-            <h3 class="text-2xl text-green-300 font-semibold mb-6">Entre em contato</h3>
-            <div class="space-y-4">
-              
-              <a href="https://wa.me/5545998394505" target="_blank" class="flex items-center group/link p-2 rounded-lg transition-all duration-300 hover:bg-green-500/10">
-                <i class="fab fa-whatsapp text-green-400 text-3xl mr-5 transition-all duration-300 group-hover/link:text-green-300"></i>
-                <span class="text-lg text-gray-300 transition-all duration-300 group-hover/link:text-white group-hover/link:translate-x-2">
-                  (45) 99839-4505
-                </span>
-              </a>
-      
-              <a href="mailto:marcosgimenesdev@gmail.com" class="flex items-center group/link p-2 rounded-lg transition-all duration-300 hover:bg-green-500/10">
-                <i class="fas fa-envelope text-green-400 text-3xl mr-5 transition-all duration-300 group-hover/link:text-green-300"></i>
-                <span class="text-lg text-gray-300 transition-all duration-300 group-hover/link:text-white group-hover/link:translate-x-2">
-                  marcosgimenesdev@gmail.com
-                </span>
-              </a>
-      
-              <a href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" class="flex items-center group/link p-2 rounded-lg transition-all duration-300 hover:bg-green-500/10">
-                <i class="fab fa-linkedin text-green-400 text-3xl mr-5 transition-all duration-300 group-hover/link:text-green-300"></i>
-                <span class="text-lg text-gray-300 transition-all duration-300 group-hover/link:text-white group-hover/link:translate-x-2">
-                  LinkedIn
-                </span>
-              </a>
-              
-              <a href="https://github.com/MarcosFGimenes" target="_blank" class="flex items-center group/link p-2 rounded-lg transition-all duration-300 hover:bg-green-500/10">
-                <i class="fab fa-github text-green-400 text-3xl mr-5 transition-all duration-300 group-hover/link:text-green-300"></i>
-                <span class="text-lg text-gray-300 transition-all duration-300 group-hover/link:text-white group-hover/link:translate-x-2">
-                  GitHub
-                </span>
-              </a>
-        </div>
-      </section>
-
-  <footer class="footer bg-black/80 backdrop-blur-lg border-t border-green-400/30 py-8">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="flex items-center mb-4 md:mb-0">
-          <i class="fas fa-code text-green-400 text-xl mr-2"></i>
-          <span class="text-xl font-bold text-green-400">MarcosGimenes.</span>
-        </div>
-        <div class="flex space-x-6">
-          <a href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" class="text-gray-400 hover:text-green-400 text-xl">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/MarcosFGimenes" target="_blank" class="text-gray-400 hover:text-green-400 text-xl">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://wa.me/5545998394505" target="_blank" class="text-gray-400 hover:text-green-400 text-xl">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-500">
-        <p>© 2025 Marcos Gimenes. Todos os direitos reservados.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Simple mobile menu toggle (would need proper implementation)
-    document.querySelector('button.md\\:hidden').addEventListener('click', function() {
-      const nav = document.querySelector('nav .hidden.md\\:flex');
-      nav.classList.toggle('hidden');
-      nav.classList.toggle('flex');
-      nav.classList.toggle('flex-col');
-      nav.classList.toggle('absolute');
-      nav.classList.toggle('top-16');
-      nav.classList.toggle('right-6');
-      nav.classList.toggle('bg-black');
-      nav.classList.toggle('p-4');
-      nav.classList.toggle('rounded-lg');
-      nav.classList.toggle('border');
-      nav.classList.toggle('border-green-400');
-    });
-  </script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
