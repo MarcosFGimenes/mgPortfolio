@@ -1,222 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcos Gimenes - Soluções Fullstack</title>
-    
+    <title>Blog - Marcos Gimenes</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0F172A; /* Slate 900 */
-            color: #E2E8F0; /* Slate 200 */
         }
-
-        .text-accent { color: #22d3ee; }
-        .bg-accent { background-color: #22d3ee; }
-        .border-accent { border-color: #22d3ee; }
-
-        .cta-button {
-            background-color: #22d3ee;
-            color: #0F172A;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #67e8f9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(34, 211, 238, 0.2);
-        }
-
-        .outline-button {
-            border: 1px solid #22d3ee;
-            color: #22d3ee;
-            transition: all 0.3s ease;
-        }
-        
-        .outline-button:hover {
-            background-color: rgba(34, 211, 238, 0.1);
+        .grain {
+            background-image: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.06), transparent 50%),
+                              radial-gradient(ellipse at bottom, rgba(34, 211, 238, 0.08), transparent 40%);
+            background-color: #0b1224;
         }
     </style>
 </head>
-<body class="antialiased">
-
-    <header class="bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-700/50">
-        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-            <a href="#" class="text-xl font-bold text-accent flex items-center">
-                <i class="fas fa-code mr-2"></i>
-                <span>MarcosGimenes.</span>
+<body class="min-h-screen grain text-slate-100">
+    <header class="sticky top-0 z-40 backdrop-blur bg-slate-900/70 border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="h-10 w-10 rounded-full bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center text-cyan-200 font-bold">MG</div>
+                <div>
+                    <p class="text-sm text-slate-400 uppercase tracking-[0.2em]">Blog pessoal</p>
+                    <p class="text-xl font-semibold">Marcos Gimenes</p>
+                </div>
+            </div>
+            <a href="mailto:marcosgimenesdev@gmail.com" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
+                Contato
             </a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-slate-300 hover:text-accent transition">Sobre</a>
-                <a href="#skills" class="text-slate-300 hover:text-accent transition">Habilidades</a>
-                <a href="#projects" class="text-slate-300 hover:text-accent transition">Projetos</a>
-                <a href="#contact" class="cta-button font-semibold px-5 py-2 rounded-md">
-                    <i class="fas fa-paper-plane mr-2"></i> Fale Comigo
-                </a>
-            </div>
-            <button class="md:hidden text-accent" id="mobile-menu-button">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <div class="flex flex-col space-y-4 px-6 pb-4">
-                <a href="#about" class="text-slate-300 hover:text-accent transition">Sobre</a>
-                <a href="#skills" class="text-slate-300 hover:text-accent transition">Habilidades</a>
-                <a href="#projects" class="text-slate-300 hover:text-accent transition">Projetos</a>
-                <a href="#contact" class="text-slate-300 hover:text-accent transition">Contato</a>
-            </div>
         </div>
     </header>
 
-    <main>
-        <section id="home" class="container mx-auto px-6 py-24 text-center">
-            <div class="max-w-3xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4 text-slate-100">
-                    Soluções Fullstack que <span class="text-accent">Impulsionam</span> Negócios
-                </h1>
-                <p class="text-lg text-slate-400 mb-8">
-                    Crio aplicações web robustas e escaláveis, transformando suas ideias em realidade digital com performance e design moderno.
-                </p>
-                <div class="flex justify-center gap-4">
-                    <a href="#contact" class="cta-button font-semibold px-8 py-3 rounded-md">Agendar Consultoria</a>
-                    <a href="#projects" class="outline-button font-semibold px-8 py-3 rounded-md">Ver Projetos</a>
-                </div>
-            </div>
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-10">
+        <section class="space-y-4">
+            <p class="text-cyan-300 font-semibold text-sm uppercase tracking-[0.25em]">Agora</p>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight">Reflexões, aprendizados e o básico bem feito.</h1>
+            <p class="text-lg text-slate-300 max-w-3xl">
+                Um cantinho para registrar o que estou construindo, aprendendo e sentindo enquanto desenvolvo produtos digitais.
+            </p>
         </section>
 
-        <section id="about" class="container mx-auto px-6 py-20">
-             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-100">Sobre Mim</h2>
-                <p class="text-slate-400 mt-2">Minha jornada e meu compromisso com a qualidade.</p>
-            </div>
-            <div class="grid md:grid-cols-5 gap-10 items-center">
-                <div class="md:col-span-2">
-                    <img src="assets/foto_topzera.jpg" alt="Marcos Gimenes" class="rounded-lg shadow-lg w-full">
+        <section class="space-y-6">
+            <article class="bg-slate-900/60 border border-slate-800 rounded-xl shadow-xl p-6 md:p-8">
+                <div class="flex items-center gap-3 text-sm text-slate-400 mb-4">
+                    <span class="px-3 py-1 rounded-full bg-cyan-400/10 text-cyan-200 font-semibold">Primeira postagem</span>
+                    <span>Publicado em 22/11/2025 às 20:53</span>
                 </div>
-                <div class="md:col-span-3">
-                    <h3 class="text-2xl font-semibold text-accent mb-4">Desenvolvedor Fullstack e Parceiro de Negócios</h3>
-                    <p class="text-slate-300 mb-4">
-                        Com mais de 3 anos de experiência e formação em <span class="font-semibold text-slate-100">Análise e Desenvolvimento de Sistemas</span> pela PUCPR, meu foco é entregar mais do que código: entrego soluções que resolvem problemas e agregam valor real ao seu negócio.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span>Comunicação transparente e foco nos seus objetivos.</span></div>
-                        <div class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span>Uso de tecnologias modernas para garantir escalabilidade.</span></div>
-                        <div class="flex items-start"><i class="fas fa-check-circle text-accent mt-1 mr-3"></i><span>Compromisso com prazos e qualidade em cada entrega.</span></div>
-                    </div>
+                <h2 class="text-2xl md:text-3xl font-semibold text-slate-100 mb-4">
+                    WordPad e a arte de fazer o básico bem feito
+                </h2>
+                <div class="space-y-4 text-slate-200 leading-relaxed">
+                    <p>WordPad... Ta aí um programa que nunca ouvi ninguém falar, mas que em momentos que estou sem o pacote Office, sempre me salva... Estive pensando agora, será que foi criado em alternativa ao Word? É idêntico mas não tem quase nada das mesmas funcionalidades, apenas a <strong>funcionalidade principal</strong> que é escrever um documento, assim como estou fazendo agora, bom, isso não é bem um documento.</p>
+                    <p>Ontem publicamos a primeira versão do Nome de Atendente no Whatsapp, quando digo primeira atualização quero dizer que foi a primeira (espero que de muitas) que eu estive trabalhando nele. Foi algumas semanas de trabalho (com MUITA IA) que resultou numa atualização que corrigiu toda a dor de cabeça que o usuário tinha ao usar. Aprendi muito nesse tempo, principalmente que, encher de frufru e não fazer bem o principal da aplicação, é inútil, é trabalho jogado no lixo, o usuário vai entrar, vai ver várias funcionalidades, mas a <strong>PRINCIPAL</strong> não vai funcionar e ele vai cair fora, trocar por uma que faz o básico bem feito.</p>
+                    <p>Posso olhar o WordPad dessa forma agora, ele cumpre bem a função principal, fazer o básico bem feito, consigo digitar, aumentar texto, fazer parágrafo, quebrar linhas, tudo com um programa que não preciso pagar um absurdo para usar de forma original.</p>
+                    <p>Mas além de todo esse aprendizado, o que posso dizer sobre quando saiu a atualização? Bom, ansiedade, muita ansiedade, mas uma ansiedade boa, em querer ver se está tudo funcionando, quando a atualização saiu eu estava no escritório e fui logo ver em todos computadores como que estava se saindo, foi incrível ver que aquilo que trabalhei, que dediquei meu tempo fazendo, indo dormir tarde e acordando as 5 da manhã para continuar o trabalho, estava funcionando... E funcionando bem! Ver aquilo que apliquei tanto esforço funcionando é de uma satisfação que não tem preço. Claro que a aplicação não é minha e é meu trabalho fazer funcionar, mas a sensação não muda.</p>
+                    <p>Sou muito grato ao rapaz que está me dando essa oportunidade, OFelquis, ele literalmente está dando um tiro no escuro quando confia a sua aplicação aos cuidados do meu código, com toda certeza não esquecerei disso nunca na minha vida.</p>
+                    <p>Então de reflexão posso deixar: Sejemos como o WordPad, 7Zip, Winrar, VLC Media Player e busquemos fazer o principal bem feito! Boa noite.</p>
                 </div>
-            </div>
-        </section>
-
-        <section id="skills" class="py-20 bg-slate-900">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-slate-100">Minhas Habilidades</h2>
-                    <p class="text-slate-400 mt-2">As ferramentas que utilizo para construir soluções de ponta.</p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 text-center">
-                    <div class="tech-icon"><i class="fab fa-react text-4xl text-accent"></i><p class="mt-2 text-slate-300">React</p></div>
-                    <div class="tech-icon"><i class="fab fa-node-js text-4xl text-accent"></i><p class="mt-2 text-slate-300">Node.js</p></div>
-                    <div class="tech-icon"><i class="fab fa-java text-4xl text-accent"></i><p class="mt-2 text-slate-300">Java</p></div>
-                    <div class="tech-icon"><i class="fas fa-leaf text-4xl text-accent"></i><p class="mt-2 text-slate-300">Spring Boot</p></div>
-                    <div class="tech-icon"><i class="fab fa-python text-4xl text-accent"></i><p class="mt-2 text-slate-300">Python</p></div>
-                    <div class="tech-icon"><i class="fas fa-database text-4xl text-accent"></i><p class="mt-2 text-slate-300">SQL/NoSQL</p></div>
-                    <div class="tech-icon"><i class="fab fa-html5 text-4xl text-accent"></i><p class="mt-2 text-slate-300">HTML5</p></div>
-                    <div class="tech-icon"><i class="fab fa-css3-alt text-4xl text-accent"></i><p class="mt-2 text-slate-300">CSS3</p></div>
-                    <div class="tech-icon"><i class="fas fa-wind text-4xl text-accent"></i><p class="mt-2 text-slate-300">Tailwind CSS</p></div>
-                    <div class="tech-icon"><i class="fab fa-figma text-4xl text-accent"></i><p class="mt-2 text-slate-300">Figma</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="container mx-auto px-6 py-20">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-100">Projetos de Destaque</h2>
-                <p class="text-slate-400 mt-2">Uma amostra do meu trabalho e do valor que gero.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="assets/securitykey2.png" class="w-full h-48 object-cover" alt="Security Key">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-slate-100 mb-2">Security Key</h3>
-                        <p class="text-slate-400 mb-4 text-sm">Sistema de segurança com autenticação via Firebase Auth, aumentando a proteção de dados.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Firebase</span>
-                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Node.js</span>
-                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Autenticação</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="assets/projeto-burger.png" class="w-full h-48 object-cover" alt="Landing Page Hamburgueria">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-slate-100 mb-2">Landing Page de Conversão</h3>
-                        <p class="text-slate-400 mb-4 text-sm">Página otimizada para hamburgueria local, resultando em 45% de aumento nas vendas diretas.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">HTML</span>
-                             <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Tailwind CSS</span>
-                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Frontend</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-slate-800 rounded-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
-                    <img src="assets/hairflow.png" class="w-full h-48 object-cover" alt="Hairflow">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-slate-100 mb-2">Hairflow - Gestão de Salões</h3>
-                        <p class="text-slate-400 mb-4 text-sm">Plataforma SaaS para automação de agendamentos e gestão financeira para salões de beleza.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Next.js</span>
-                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">Node.js</span>
-                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded-full">SaaS</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20 bg-slate-900">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-2xl mx-auto">
-                    <h2 class="text-3xl font-bold text-slate-100">Vamos Construir Algo Incrível?</h2>
-                    <p class="text-slate-400 mt-4 mb-8">
-                        Estou disponível para novos projetos e parcerias. Se você tem uma ideia e precisa de um desenvolvedor comprometido, entre em contato.
-                    </p>
-                    <a href="mailto:marcosgimenesdev@gmail.com" class="cta-button font-semibold px-10 py-4 rounded-md text-lg">
-                        <i class="fas fa-envelope mr-2"></i> Enviar um Email
-                    </a>
-                    <div class="mt-8 text-slate-400">
-                        <p>Ou me encontre nas redes sociais:</p>
-                        <div class="flex justify-center space-x-6 mt-4">
-                            <a href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" class="text-slate-400 hover:text-accent text-2xl"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/MarcosFGimenes" target="_blank" class="text-slate-400 hover:text-accent text-2xl"><i class="fab fa-github"></i></a>
-                            <a href="https://wa.me/5545998394505" target="_blank" class="text-slate-400 hover:text-accent text-2xl"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </article>
         </section>
     </main>
 
-    <footer class="bg-slate-900 border-t border-slate-700/50 py-6">
-        <div class="container mx-auto px-6 text-center text-slate-500">
-            <p>&copy; 2025 Marcos Gimenes. Todos os direitos reservados.</p>
+    <footer class="border-t border-slate-800 bg-slate-900/70">
+        <div class="max-w-5xl mx-auto px-6 py-6 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
+            <p>&copy; 2025 Marcos Gimenes. Feito com café, código e honestidade.</p>
+            <div class="flex items-center gap-4">
+                <a class="hover:text-cyan-200 transition" href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a class="hover:text-cyan-200 transition" href="https://github.com/MarcosFGimenes" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="hover:text-cyan-200 transition" href="https://wa.me/5545998394505" target="_blank" rel="noreferrer">WhatsApp</a>
+            </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
