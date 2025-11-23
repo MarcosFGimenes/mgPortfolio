@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>001 - WordPad e o basico bem feito</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'IBM Plex Mono', monospace; }
+        .grid-bg {
+            background-color: #0b1120;
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .code-frame {
+            background: #0f172a;
+            border: 1px solid #1f2937;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+        }
+        .title-bar-dot { width: 10px; height: 10px; border-radius: 9999px; }
+    </style>
+</head>
+<body class="min-h-screen text-slate-100 grid-bg flex flex-col">
+    <header class="sticky top-0 z-40 backdrop-blur bg-slate-950/80 border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="flex items-center gap-1">
+                    <span class="title-bar-dot bg-rose-500"></span>
+                    <span class="title-bar-dot bg-amber-400"></span>
+                    <span class="title-bar-dot bg-emerald-400"></span>
+                </div>
+                <p class="text-sm text-slate-400">marcos@posts/001-wordpad.html:~$</p>
+            </div>
+            <div class="flex items-center gap-4 text-sm">
+                <a class="text-emerald-300 hover:text-emerald-200 transition" href="../index.html">cd ..</a>
+                <a class="text-emerald-300 hover:text-emerald-200 transition" href="mailto:marcosgimenesdev@gmail.com">echo "fale comigo"</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-8 flex-1">
+        <div class="flex items-center gap-3 text-sm text-slate-400">
+            <span class="px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-200 font-semibold">Post #001</span>
+            <span>22/11/2025</span>
+            <span>20:53</span>
+            <span class="text-slate-500">path: ./posts/001-wordpad.html</span>
+        </div>
+
+        <article class="code-frame rounded-xl overflow-hidden">
+            <div class="px-4 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-900/80">
+                <div class="flex items-center gap-2 text-xs text-slate-400">
+                    <span class="text-emerald-300 font-semibold">cat</span>
+                    <span>001-wordpad.md</span>
+                </div>
+            </div>
+            <div class="p-6 space-y-5">
+                <h1 class="text-2xl md:text-3xl font-semibold text-slate-100">
+                    Não sou muito bom com textinhos mas vamos la...
+                </h1>
+                <div class="text-slate-200 leading-relaxed space-y-4">
+                    <p>WordPad... Ta ai um programa que nunca ouvi ninguem falar, mas que em momentos que estou sem o pacote Office, sempre me salva... Estive pensando agora, sera que foi criado em alternativa ao Word? E identico mas nao tem quase nada das mesmas funcionalidades, apenas a <strong>funcionalidade principal</strong> que e escrever um documento, assim como estou fazendo agora, bom, isso nao e bem um documento.</p>
+                    <p>Ontem publicamos a primeira versao do Nome de Atendente no Whatsapp, quando digo primeira atualizacao quero dizer que foi a primeira (espero que de muitas) que eu estive trabalhando nele. Foram algumas semanas de trabalho (com MUITA IA) que resultaram numa atualizacao que corrigiu toda a dor de cabeca que o usuario tinha ao usar. Aprendi muito nesse tempo, principalmente que, encher de frufru e nao fazer bem o principal da aplicacao, e inutil, e trabalho jogado no lixo, o usuario vai entrar, vai ver varias funcionalidades, mas a <strong>PRINCIPAL</strong> nao vai funcionar e ele vai cair fora, trocar por uma que faz o basico bem feito.</p>
+                    <p>Posso olhar o WordPad dessa forma agora, ele cumpre bem a funcao principal, fazer o basico bem feito, consigo digitar, aumentar texto, fazer paragrafo, quebrar linhas, tudo com um programa que nao preciso pagar um absurdo para usar de forma original.</p>
+                    <p>Mas alem de todo esse aprendizado, o que posso dizer sobre quando saiu a atualizacao? Bom, ansiedade, muita ansiedade, mas uma ansiedade boa, em querer ver se esta tudo funcionando. Quando a atualizacao saiu eu estava no escritorio e fui logo ver em todos computadores como estava se saindo; foi incrivel ver que aquilo que trabalhei, que dediquei meu tempo fazendo, indo dormir tarde e acordando as 5 da manha para continuar o trabalho, estava funcionando... E funcionando bem! Ver aquilo que apliquei tanto esforco funcionando e de uma satisfacao que nao tem preco. Claro que a aplicacao nao e minha e e meu trabalho fazer funcionar, mas a sensacao nao muda.</p>
+                    <p>Sou muito grato ao rapaz que esta me dando essa oportunidade, OFelquis, ele literalmente esta dando um tiro no escuro quando confia a sua aplicacao aos cuidados do meu codigo, com toda certeza nao esquecerei disso nunca na minha vida.</p>
+                    <p>Entao de reflexao posso deixar: sejemos como o WordPad, 7Zip, WinRAR, VLC Media Player e busquemos fazer o principal bem feito! Boa noite.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="border-t border-slate-800 bg-slate-950/80">
+        <div class="max-w-5xl mx-auto px-6 py-6 text-xs text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
+            <p>&copy; 2025 Marcos Gimenes - less fluff, more shipping.</p>
+            <div class="flex items-center gap-4">
+                <a class="hover:text-emerald-200 transition" href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a class="hover:text-emerald-200 transition" href="https://github.com/MarcosFGimenes" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="hover:text-emerald-200 transition" href="https://wa.me/5545998394505" target="_blank" rel="noreferrer">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

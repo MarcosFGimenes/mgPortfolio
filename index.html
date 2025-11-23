@@ -3,77 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Marcos Gimenes</title>
+    <title>dev.log - Marcos Gimenes</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        body { font-family: 'IBM Plex Mono', monospace; }
+        .grid-bg {
+            background-color: #0b1120;
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
-        .grain {
-            background-image: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.06), transparent 50%),
-                              radial-gradient(ellipse at bottom, rgba(34, 211, 238, 0.08), transparent 40%);
-            background-color: #0b1224;
+        .code-frame {
+            background: #0f172a;
+            border: 1px solid #1f2937;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
         }
+        .title-bar-dot { width: 10px; height: 10px; border-radius: 9999px; }
     </style>
 </head>
-<body class="min-h-screen grain text-slate-100">
-    <header class="sticky top-0 z-40 backdrop-blur bg-slate-900/70 border-b border-slate-800">
+<body class="min-h-screen text-slate-100 grid-bg flex flex-col">
+    <header class="sticky top-0 z-40 backdrop-blur bg-slate-950/80 border-b border-slate-800">
         <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="h-10 w-10 rounded-full bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center text-cyan-200 font-bold">MG</div>
-                <div>
-                    <p class="text-sm text-slate-400 uppercase tracking-[0.2em]">Blog pessoal</p>
-                    <p class="text-xl font-semibold">Marcos Gimenes</p>
+            <div class="flex items-center gap-3">
+                <div class="flex items-center gap-1">
+                    <span class="title-bar-dot bg-rose-500"></span>
+                    <span class="title-bar-dot bg-amber-400"></span>
+                    <span class="title-bar-dot bg-emerald-400"></span>
                 </div>
+                <p class="text-sm text-slate-400">marcos@blog:~$</p>
             </div>
-            <a href="mailto:marcosgimenesdev@gmail.com" class="text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition">
-                Contato
+            <a class="text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition" href="mailto:marcosgimenesdev@gmail.com">
+                echo "fale comigo"
             </a>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-6 py-12 space-y-10">
-        <section class="space-y-4">
-            <p class="text-cyan-300 font-semibold text-sm uppercase tracking-[0.25em]">Agora</p>
-            <h1 class="text-4xl md:text-5xl font-bold leading-tight">Reflexões, aprendizados e o básico bem feito.</h1>
-            <p class="text-lg text-slate-300 max-w-3xl">
-                Um cantinho para registrar o que estou construindo, aprendendo e sentindo enquanto desenvolvo produtos digitais.
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-10 flex-1">
+        <section class="space-y-3">
+            <p class="text-emerald-300 text-sm uppercase tracking-[0.25em]">dev.log</p>
+            <h1 class="text-3xl md:text-4xl font-semibold text-slate-50">Reflexoes de codigo, produto e gente.</h1>
+            <p class="text-base text-slate-300">
+                Pequenos dumps do que estou aprendendo enquanto construo e mantenho produtos digitais.
             </p>
         </section>
 
-        <section class="space-y-6">
-            <article class="bg-slate-900/60 border border-slate-800 rounded-xl shadow-xl p-6 md:p-8">
-                <div class="flex items-center gap-3 text-sm text-slate-400 mb-4">
-                    <span class="px-3 py-1 rounded-full bg-cyan-400/10 text-cyan-200 font-semibold">Primeira postagem</span>
-                    <span>Publicado em 22/11/2025 às 20:53</span>
+        <section class="space-y-4">
+            <div class="flex items-center gap-2 text-xs text-slate-400">
+                <span class="text-emerald-300 font-semibold">ls</span>
+                <span>./posts</span>
+            </div>
+
+            <article class="code-frame rounded-xl overflow-hidden">
+                <div class="px-4 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-900/80">
+                    <div class="flex items-center gap-2 text-xs text-slate-400">
+                        <span class="text-emerald-300 font-semibold">post</span>
+                        <span>22/11/2025</span>
+                        <span>20:53</span>
+                    </div>
+                    <span class="text-[11px] text-slate-500">./posts/001-wordpad.html</span>
                 </div>
-                <h2 class="text-2xl md:text-3xl font-semibold text-slate-100 mb-4">
-                    WordPad e a arte de fazer o básico bem feito
-                </h2>
-                <div class="space-y-4 text-slate-200 leading-relaxed">
-                    <p>WordPad... Ta aí um programa que nunca ouvi ninguém falar, mas que em momentos que estou sem o pacote Office, sempre me salva... Estive pensando agora, será que foi criado em alternativa ao Word? É idêntico mas não tem quase nada das mesmas funcionalidades, apenas a <strong>funcionalidade principal</strong> que é escrever um documento, assim como estou fazendo agora, bom, isso não é bem um documento.</p>
-                    <p>Ontem publicamos a primeira versão do Nome de Atendente no Whatsapp, quando digo primeira atualização quero dizer que foi a primeira (espero que de muitas) que eu estive trabalhando nele. Foi algumas semanas de trabalho (com MUITA IA) que resultou numa atualização que corrigiu toda a dor de cabeça que o usuário tinha ao usar. Aprendi muito nesse tempo, principalmente que, encher de frufru e não fazer bem o principal da aplicação, é inútil, é trabalho jogado no lixo, o usuário vai entrar, vai ver várias funcionalidades, mas a <strong>PRINCIPAL</strong> não vai funcionar e ele vai cair fora, trocar por uma que faz o básico bem feito.</p>
-                    <p>Posso olhar o WordPad dessa forma agora, ele cumpre bem a função principal, fazer o básico bem feito, consigo digitar, aumentar texto, fazer parágrafo, quebrar linhas, tudo com um programa que não preciso pagar um absurdo para usar de forma original.</p>
-                    <p>Mas além de todo esse aprendizado, o que posso dizer sobre quando saiu a atualização? Bom, ansiedade, muita ansiedade, mas uma ansiedade boa, em querer ver se está tudo funcionando, quando a atualização saiu eu estava no escritório e fui logo ver em todos computadores como que estava se saindo, foi incrível ver que aquilo que trabalhei, que dediquei meu tempo fazendo, indo dormir tarde e acordando as 5 da manhã para continuar o trabalho, estava funcionando... E funcionando bem! Ver aquilo que apliquei tanto esforço funcionando é de uma satisfação que não tem preço. Claro que a aplicação não é minha e é meu trabalho fazer funcionar, mas a sensação não muda.</p>
-                    <p>Sou muito grato ao rapaz que está me dando essa oportunidade, OFelquis, ele literalmente está dando um tiro no escuro quando confia a sua aplicação aos cuidados do meu código, com toda certeza não esquecerei disso nunca na minha vida.</p>
-                    <p>Então de reflexão posso deixar: Sejemos como o WordPad, 7Zip, Winrar, VLC Media Player e busquemos fazer o principal bem feito! Boa noite.</p>
+                <div class="p-6 space-y-4">
+                    <div class="flex items-center justify-between gap-3 flex-wrap">
+                        <h2 class="text-2xl font-semibold text-slate-100">
+                            O básico bem feito é literalmente a melhor opção                        </h2>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">
+                    Reflexão sinistra    
+                    </p>
+                    <a href="./posts/001-wordpad.html" class="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-200 font-semibold text-sm">
+                        cat ./posts/001-wordpad.html
+                        <span class="text-xs text-slate-500">(abrir)</span>
+                    </a>
                 </div>
             </article>
         </section>
     </main>
 
-    <footer class="border-t border-slate-800 bg-slate-900/70">
-        <div class="max-w-5xl mx-auto px-6 py-6 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p>&copy; 2025 Marcos Gimenes. Feito com café, código e honestidade.</p>
+    <footer class="border-t border-slate-800 bg-slate-950/80">
+        <div class="max-w-5xl mx-auto px-6 py-6 text-xs text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
+            <p>&copy; 2025 Marcos Gimenes - less fluff, more shipping.</p>
             <div class="flex items-center gap-4">
-                <a class="hover:text-cyan-200 transition" href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" rel="noreferrer">LinkedIn</a>
-                <a class="hover:text-cyan-200 transition" href="https://github.com/MarcosFGimenes" target="_blank" rel="noreferrer">GitHub</a>
-                <a class="hover:text-cyan-200 transition" href="https://wa.me/5545998394505" target="_blank" rel="noreferrer">WhatsApp</a>
+                <a class="hover:text-emerald-200 transition" href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a class="hover:text-emerald-200 transition" href="https://github.com/MarcosFGimenes" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="hover:text-emerald-200 transition" href="https://wa.me/5545998394505" target="_blank" rel="noreferrer">WhatsApp</a>
             </div>
         </div>
     </footer>
