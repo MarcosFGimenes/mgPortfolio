@@ -1,99 +1,152 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dev.log - Marcos Gimenes</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: 'IBM Plex Mono', monospace; }
-        .grid-bg {
-            background-color: #0b1120;
-            background-image:
-                linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-        .code-frame {
-            background: #0f172a;
-            border: 1px solid #1f2937;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
-        }
-        .title-bar-dot { width: 10px; height: 10px; border-radius: 9999px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Marcos Gimenes aplica tecnologia a problemas reais de operação, indústria e negócios.">
+  <title>Marcos Gimenes — Tecnologia para problemas reais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen text-slate-100 grid-bg flex flex-col">
-    <header class="sticky top-0 z-40 backdrop-blur bg-slate-950/80 border-b border-slate-800">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="flex items-center gap-1">
-                    <span class="title-bar-dot bg-rose-500"></span>
-                    <span class="title-bar-dot bg-amber-400"></span>
-                    <span class="title-bar-dot bg-emerald-400"></span>
-                </div>
-                <p class="text-sm text-slate-400">marcos@blog:~$</p>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="/" aria-label="Marcos Gimenes, página inicial">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Marcos Gimenes</span>
+      </a>
+      <span class="header-status"><span></span> Sistema visual v1.0</span>
+      <a class="button button--quiet button--small" href="mailto:marcosgimenesdev@gmail.com">Contato <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="intro section" aria-labelledby="hero-title">
+      <div class="container">
+        <p class="eyebrow"><span></span> MARcos Gimenes</p>
+        <div class="intro-grid">
+          <div class="intro-copy">
+            <p class="hero-domains">Tecnologia <span>↔</span> Indústria <span>↔</span> Empreendedorismo</p>
+            <h1 id="hero-title">Tecnologia para <em>problemas que existem</em> de verdade.</h1>
+            <p class="hero-description">Desenvolvo sistemas, automações e produtos digitais enquanto vivo diariamente os desafios de uma operação industrial.</p>
+            <p class="hero-context">Entre código, indústria, manutenção, frotas e empreendedorismo.</p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="#principios-title">Conheça minha trajetória <span aria-hidden="true">↓</span></a>
+              <a class="button button--secondary" href="#componentes">Veja o que eu construo <span aria-hidden="true">↓</span></a>
             </div>
-            <a class="text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition" href="mailto:marcosgimenesdev@gmail.com">
-                echo "fale comigo"
-            </a>
+            <nav class="social-links" aria-label="Canais de contato">
+              <a href="https://github.com/MarcosFGimenes" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+              <a href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+              <a href="https://wa.me/5545998394505" target="_blank" rel="noreferrer">WhatsApp <span aria-hidden="true">↗</span></a>
+              <a href="mailto:marcosgimenesdev@gmail.com">E-mail <span aria-hidden="true">↗</span></a>
+            </nav>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-visual__header"><span>OPERAÇÃO / CAMADA 01</span><span>MG—01</span></div>
+            <div class="hero-visual__field">
+              <span class="field-node field-node--one"></span><span class="field-node field-node--two"></span><span class="field-node field-node--three"></span>
+              <i class="field-route field-route--one"></i><i class="field-route field-route--two"></i>
+              <b class="field-core"><i></i><i></i><i></i></b>
+              <small class="field-label field-label--one">SISTEMAS</small><small class="field-label field-label--two">OPERAÇÃO</small><small class="field-label field-label--three">DECISÃO</small>
+            </div>
+            <div class="hero-visual__footer"><span><i></i> Conexões em contexto</span><span>01 / 03</span></div>
+          </div>
         </div>
-    </header>
+        <div class="hero-transition" aria-hidden="true"><span>Desça para explorar</span><i></i><i></i><i></i><b></b></div>
+      </div>
+    </section>
 
-    <main class="max-w-5xl mx-auto px-6 py-12 space-y-10 flex-1">
-        <section class="space-y-3">
-            <p class="text-emerald-300 text-sm uppercase tracking-[0.25em]">dev.log</p>
-            <h1 class="text-3xl md:text-4xl font-semibold text-slate-50">Reflexoes de codigo, produto e gente.</h1>
-            <p class="text-base text-slate-300">
-                Pequenos dumps do que estou aprendendo enquanto construo e mantenho produtos digitais.
-            </p>
-        </section>
-
-        <section class="space-y-4">
-            <div class="flex items-center gap-2 text-xs text-slate-400">
-                <span class="text-emerald-300 font-semibold">ls</span>
-                <span>./posts</span>
-            </div>
-
-            <article class="code-frame rounded-xl overflow-hidden">
-                <div class="px-4 py-3 border-b border-slate-800 flex items-center justify-between bg-slate-900/80">
-                    <div class="flex items-center gap-2 text-xs text-slate-400">
-                        <span class="text-emerald-300 font-semibold">post</span>
-                        <span>22/11/2025</span>
-                        <span>20:53</span>
-                    </div>
-                    <span class="text-[11px] text-slate-500">./posts/001-wordpad.html</span>
-                </div>
-                <div class="p-6 space-y-4">
-                    <div class="flex items-center justify-between gap-3 flex-wrap">
-                        <h2 class="text-2xl font-semibold text-slate-100">
-                            O básico bem feito é literalmente a melhor opção                        </h2>
-                    </div>
-                    <p class="text-slate-300 leading-relaxed">
-                    Reflexão sinistra    
-                    </p>
-                    <a href="./posts/001-wordpad.html" class="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-200 font-semibold text-sm">
-                        cat ./posts/001-wordpad.html
-                        <span class="text-xs text-slate-500">(abrir)</span>
-                    </a>
-                </div>
-            </article>
-        </section>
-    </main>
-
-    <footer class="border-t border-slate-800 bg-slate-950/80">
-        <div class="max-w-5xl mx-auto px-6 py-6 text-xs text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p>&copy; 2025 Marcos Gimenes - less fluff, more shipping.</p>
-            <div class="flex items-center gap-4">
-                <a class="hover:text-emerald-200 transition" href="https://www.linkedin.com/in/marcosfgimenes/" target="_blank" rel="noreferrer">LinkedIn</a>
-                <a class="hover:text-emerald-200 transition" href="https://github.com/MarcosFGimenes" target="_blank" rel="noreferrer">GitHub</a>
-                <a class="hover:text-emerald-200 transition" href="https://wa.me/5545998394505" target="_blank" rel="noreferrer">WhatsApp</a>
-            </div>
+    <section class="section section--surface" id="componentes" aria-labelledby="tipografia-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow"><span></span> 01 / Tipografia</p>
+          <p>Hierarquia editorial para dar contexto aos dados, processos e pessoas por trás de cada solução.</p>
         </div>
-    </footer>
+        <div class="type-specimen">
+          <p class="display-sample" id="tipografia-title">Precisão técnica.<br>Clareza humana.</p>
+          <div class="type-notes">
+            <div><span class="label">Display</span><strong>Manrope 700–800</strong><p>Decisões, direção e grandes ideias.</p></div>
+            <div><span class="label">Texto</span><strong>Manrope 400–600</strong><p>Leitura confortável, sem ruído.</p></div>
+            <div><span class="label">Dados</span><strong>DM Mono 400–500</strong><p>Rótulos, métricas e sinalizações.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="componentes-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow"><span></span> 02 / Componentes</p>
+          <p id="componentes-title">Blocos discretos e consistentes. A interface organiza informação, sem disputar atenção com ela.</p>
+        </div>
+        <div class="component-grid">
+          <article class="panel panel--wide">
+            <span class="label">Ações</span>
+            <h2>Botões e links</h2>
+            <div class="action-row">
+              <a class="button button--primary" href="mailto:marcosgimenesdev@gmail.com">Iniciar conversa <span aria-hidden="true">↗</span></a>
+              <a class="button button--secondary" href="#status">Ver detalhes <span aria-hidden="true">→</span></a>
+              <a class="text-link" href="#tipografia-title">Link contextual <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="panel panel--metric" id="status">
+            <div class="panel-topline"><span class="label">Indicador</span><span class="status-dot" aria-label="Operacional"></span></div>
+            <p class="metric">99,8<span>%</span></p>
+            <p class="metric-caption">clareza antes de complexidade</p>
+            <div class="metric-scale" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+
+          <article class="panel panel--tagged">
+            <span class="label">Badges</span>
+            <h2>Contexto em uma linha</h2>
+            <div class="badge-list">
+              <span class="badge">Operação</span><span class="badge">Automação</span><span class="badge">Dados</span><span class="badge badge--accent">Tecnologia aplicada</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark" aria-labelledby="rastrek-title">
+      <div class="container rastrek-preview">
+        <div>
+          <p class="eyebrow eyebrow--light"><span></span> Identidade de contexto</p>
+          <h2 id="rastrek-title">Rastrek terá<br>seu próprio sinal.</h2>
+          <p>O laranja entra como uma camada específica para comunicar movimento, rastreamento e operação — sem contaminar a identidade pessoal.</p>
+        </div>
+        <div class="rastrek-signal" aria-label="Prévia visual para uma futura seção Rastrek">
+          <div class="rastrek-signal__top"><span>RASTREK / CÉU AZUL</span><span>OP. 001</span></div>
+          <div class="rastrek-signal__map" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+          <div class="rastrek-signal__bottom"><span><i></i> Em movimento</span><strong>— 25.418</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="principios-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow"><span></span> 03 / Princípios</p>
+          <p id="principios-title">Uma base para as próximas páginas, cases e conteúdos.</p>
+        </div>
+        <ol class="principles">
+          <li><span>01</span><strong>Função antes do efeito.</strong><p>Cada elemento deve ajudar alguém a entender, decidir ou agir.</p></li>
+          <li><span>02</span><strong>Dados com contexto.</strong><p>Números e tecnologia só importam quando conectados ao trabalho real.</p></li>
+          <li><span>03</span><strong>Contraste com intenção.</strong><p>O destaque aponta caminhos; não transforma a interface em ruído.</p></li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>Marcos Gimenes <span>—</span> tecnologia aplicada.</p>
+      <p class="footer-note">Fundação visual para a próxima etapa.</p>
+    </div>
+  </footer>
 </body>
 </html>
